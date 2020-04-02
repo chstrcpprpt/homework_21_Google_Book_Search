@@ -1,0 +1,30 @@
+.results-container {
+  display: block;
+  border: 1px solid rgb(53, 53, 175);
+  margin: 0 1em 1em 1em;
+  padding: 1em;
+}
+
+.image-container {
+  display: flex;
+}
+
+.image-container p {
+  padding: 1em;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.result-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.result-btns button {
+  margin: 1em;
+}
