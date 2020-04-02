@@ -1,4 +1,3 @@
 {
-  "mongoURI": "mongodb+srv://chstrcpprpt:test123456@booksearch-b3qdq.mongodb.net/test?retryWrites=true&w=majority",
-  "APIKey": "AIzaSyDKr847aSrnUOIoBrsDoa2X8jUCwGS8sp4"
+  "mongoURI": "mongodb+srv://chstrcpprpt:test123456@booksearch-b3qdq.mongodb.net/test?retryWrites=true&w=majority"
 }

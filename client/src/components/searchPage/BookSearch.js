@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../../contexts/SearchContext'
+import { BookContext } from '../../contexts/BookContext';
+
+// import { APISearch } from "../../utils/API";
 
 export default function BookSearch() {
   const [search, setSearch, handleSearch] = useContext(SearchContext); 
+  const [books, setBooks, APISearch] = useContext(BookContext); 
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
-    console.log(search);
+    APISearch(search);
     setSearch("");
   }
 

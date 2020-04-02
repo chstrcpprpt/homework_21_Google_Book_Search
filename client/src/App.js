@@ -7,17 +7,20 @@ import Home from "./pages/Home";
 import './index.css';
 import Nav from './components/Nav';
 import { SearchContextProvider } from './contexts/SearchContext';
+import { BookContextProvider } from './contexts/BookContext';
 
 function App() {
   return (
       <Router>
         <div className="App">
           <SearchContextProvider>
-            <Nav />
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/saved" component={Saved} />
-            </Switch>
+            <BookContextProvider>
+              <Nav />
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/saved" component={Saved} />
+              </Switch>
+            </BookContextProvider>
           </SearchContextProvider>
         </div>
       </Router>
