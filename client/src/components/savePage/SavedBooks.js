@@ -4,7 +4,7 @@ import SavedCard from './SavedCard/SavedCard'
 import { SavedContext } from "../../contexts/SavedContext";
 
 export default function SavedBooks() {
-  const [savedBooks, setsavedBooks] = useContext(SavedContext);
+  const [savedBooks] = useContext(SavedContext);
 
   return (
     <div>
