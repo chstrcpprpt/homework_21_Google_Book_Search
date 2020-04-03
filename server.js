@@ -4,7 +4,7 @@ const config = require("config");
 // const path = require("path");
 
 // location of api routes
-const groceries = require("./routes/api/books");
+const books = require("./routes/api/books");
 
 const app = express();
 
@@ -25,8 +25,8 @@ mongoose.connect(db,
   .then(() => console.log("MongoDB connected..."))
   .catch(err => console.log(err));
 
-// Use routes - api/groceries/* will go to this file
-app.use("/api/groceries", books);
+// Use routes - api/books/* will go to this file
+app.use("/api/books", books);
 
 // // Serve static assets if in production
 // if(process.env.NODE_ENV === "production") {

@@ -1,27 +1,20 @@
 import axios from "axios";
 
-export const APISearch = (search) => {
-  const API_URI = `https://www.googleapis.com/books/v1/volumes?q=${search}`;
+const API_URL = "/api/books";
 
-  axios.get(API_URI)
-    .then(res => {
-      const bookData = res.data.items;
-      // console.log(bookData);
-      const bookArray = [
-        bookData.map(book => {
-          return (
-            { 
-              id: book.id,
-              title: book.volumeInfo.title,
-              authors: book.volumeInfo.authors,
-              description: book.volumeInfo.description,
-              image: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "",
-              link: book.volumeInfo.infoLink
-            }
-          );
-        })
-      ];
-      console.log(bookArray);
-      return bookArray;
-    })
-}
+async function saveBook(newBook) {
+  const { data: savedBook } = await axios.post(`${API_URL}/saved`, newBook);
+  return savedBook
+};
+
+async function getSavedBooks() {
+  const { data: books } = await axios.get(`${API_URL}/saved`);
+  return books
+};
+
+async function deleteBook(id) {
+  const message = await axios.delete(`${API_URL}/saved/${id}`);
+  return message
+};
+
+export default { saveBook, getSavedBooks, deleteBook };

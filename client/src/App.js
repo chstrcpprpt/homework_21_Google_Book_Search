@@ -8,6 +8,7 @@ import './index.css';
 import Nav from './components/Nav';
 import { SearchContextProvider } from './contexts/SearchContext';
 import { BookContextProvider } from './contexts/BookContext';
+import { SavedContextProvider } from './contexts/SavedContext';
 
 function App() {
   return (
@@ -15,11 +16,13 @@ function App() {
         <div className="App">
           <SearchContextProvider>
             <BookContextProvider>
-              <Nav />
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/saved" component={Saved} />
-              </Switch>
+              <SavedContextProvider>
+                <Nav />
+                <Switch>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/saved" component={Saved} />
+                </Switch>
+              </SavedContextProvider>
             </BookContextProvider>
           </SearchContextProvider>
         </div>
