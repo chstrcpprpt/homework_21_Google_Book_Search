@@ -16,6 +16,7 @@ export default function SavedBooks() {
             return (
               <SavedCard 
                 key={i}
+                id={book._id}
                 title={book.title}
                 authors={book.author}
                 image={book.image}

@@ -14,13 +14,12 @@ export default function Home() {
     }
     getBooks();
     console.log(savedBooks);
-  }, []);
+  }, [savedBooks]);
 
   return (
     <div>
       <Header />
       <SavedBooks />
-      <h1>Saved page</h1>
     </div>
   )
 }
