@@ -1,11 +1,9 @@
 import React, { useContext } from 'react'
 import { BookContext } from '../../contexts/BookContext';
 import BookCard from './BookCard/BookCard';
-// import { SavedContext } from '../../contexts/SavedContext';
 
 export default function Results() {
   const [books, setBooks] = useContext(BookContext);
-  // const [savedBooks, setSavedBooks] = useContext(SavedContext);
 
   return (
     <div>
